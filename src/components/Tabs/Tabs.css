@@ -1,0 +1,64 @@
+.ds-tabs { display: flex; flex-direction: column; }
+
+.ds-tablist {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.ds-tablist[data-variant="underline"] {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ds-tab {
+  position: relative;
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: var(--radius-xs);
+  background: transparent;
+  color: var(--text-tertiary);
+  font: var(--type-label-lg);
+  cursor: pointer;
+  border: 0;
+  transition: color var(--duration-fast) var(--ease-standard),
+              background var(--duration-fast) var(--ease-standard);
+}
+.ds-tab:hover { color: var(--text-primary); }
+.ds-tab[aria-selected="true"] { color: var(--text-primary); }
+.ds-tab:focus-visible { outline: none; box-shadow: var(--focus-brand); }
+
+/* Segmented variant (sharper replacement for the old pill segmented control) */
+.ds-tablist[data-variant="pill"],
+.ds-tablist[data-variant="segmented"] {
+  background: var(--bg-surface-2);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  gap: 2px;
+}
+.ds-tablist[data-variant="pill"] .ds-tab,
+.ds-tablist[data-variant="segmented"] .ds-tab {
+  height: 28px;
+  padding: 0 14px;
+  border-radius: var(--radius-xs);
+  font: var(--type-label-md);
+}
+.ds-tablist[data-variant="pill"] .ds-tab[aria-selected="true"],
+.ds-tablist[data-variant="segmented"] .ds-tab[aria-selected="true"] {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Underline variant */
+.ds-tablist[data-variant="underline"] .ds-tab {
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  height: 40px;
+}
+.ds-tablist[data-variant="underline"] .ds-tab[aria-selected="true"] {
+  color: var(--text-brand);
+  border-bottom-color: var(--action-brand);
+}
+
+.ds-tabpanel { padding: 20px 0; color: var(--text-secondary); }

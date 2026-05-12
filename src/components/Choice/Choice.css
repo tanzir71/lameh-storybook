@@ -1,0 +1,92 @@
+/* Shared styles for Checkbox, Radio, Switch */
+
+.ds-choice {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font: var(--type-body-md);
+  color: var(--text-primary);
+  user-select: none;
+}
+.ds-choice[data-disabled="true"] { cursor: not-allowed; color: var(--text-disabled); }
+.ds-choice-input { position: absolute; opacity: 0; pointer-events: none; }
+
+.ds-choice-text { padding-top: 1px; }
+.ds-choice-desc { font: var(--type-caption-sm); color: var(--text-tertiary); margin-top: 2px; }
+
+/* Checkbox box */
+.ds-choice-box {
+  flex: none;
+  width: 18px; height: 18px;
+  border-radius: var(--radius-xs);
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-emphasis);
+  display: grid; place-items: center;
+  transition: background var(--duration-fast) var(--ease-standard),
+              border-color var(--duration-fast) var(--ease-standard),
+              box-shadow var(--duration-fast) var(--ease-standard);
+}
+.ds-choice-box svg { opacity: 0; color: var(--action-brand-text); }
+.ds-choice-input:checked + .ds-choice-box {
+  background: var(--action-brand);
+  border-color: var(--action-brand);
+}
+.ds-choice-input:checked + .ds-choice-box svg { opacity: 1; }
+.ds-choice-input:focus-visible + .ds-choice-box { box-shadow: var(--focus-brand); }
+.ds-choice-input:indeterminate + .ds-choice-box { background: var(--action-brand); border-color: var(--action-brand); }
+.ds-choice-input:indeterminate + .ds-choice-box::after {
+  content: ""; width: 8px; height: 2px; background: var(--action-brand-text); border-radius: 1px;
+}
+.ds-choice-input:indeterminate + .ds-choice-box svg { display: none; }
+
+.ds-choice[data-disabled="true"] .ds-choice-box {
+  background: var(--bg-disabled);
+  border-color: var(--border-disabled);
+}
+
+/* Radio */
+.ds-choice-radio {
+  flex: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-emphasis);
+  display: grid; place-items: center;
+  transition: border-color var(--duration-fast) var(--ease-standard),
+              box-shadow var(--duration-fast) var(--ease-standard);
+}
+.ds-choice-radio::after {
+  content: ""; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--action-brand);
+  transform: scale(0);
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+.ds-choice-input:checked + .ds-choice-radio { border-color: var(--action-brand); }
+.ds-choice-input:checked + .ds-choice-radio::after { transform: scale(1); }
+.ds-choice-input:focus-visible + .ds-choice-radio { box-shadow: var(--focus-brand); }
+
+/* Switch */
+.ds-switch-track {
+  flex: none;
+  position: relative;
+  width: 36px; height: 20px;
+  background: var(--border-default);
+  border-radius: var(--radius-pill);
+  transition: background var(--duration-fast) var(--ease-standard),
+              box-shadow var(--duration-fast) var(--ease-standard);
+}
+.ds-switch-track::after {
+  content: "";
+  position: absolute;
+  inset: 2px auto auto 2px;
+  width: 16px; height: 16px;
+  background: var(--color-neutral-0);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--duration-base) var(--ease-emphasized);
+}
+.ds-choice-input:checked + .ds-switch-track { background: var(--action-brand); }
+.ds-choice-input:checked + .ds-switch-track::after { transform: translateX(16px); }
+.ds-choice-input:focus-visible + .ds-switch-track { box-shadow: var(--focus-brand); }
+.ds-choice[data-disabled="true"] .ds-switch-track { background: var(--bg-disabled); }

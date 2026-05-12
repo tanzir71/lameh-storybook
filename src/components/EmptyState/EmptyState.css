@@ -1,0 +1,20 @@
+.ds-empty {
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  gap: 8px;
+  padding: 40px 24px;
+  border: 1px dashed var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+}
+.ds-empty-illo {
+  width: 64px; height: 64px;
+  display: grid; place-items: center;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: var(--action-brand-subtle);
+  color: var(--text-brand);
+}
+.ds-empty-title { font: var(--type-heading-sm); color: var(--text-primary); margin: 0; }
+.ds-empty-desc { font: var(--type-body-md); color: var(--text-tertiary); margin: 0; max-width: 46ch; }
+.ds-empty-actions { margin-top: 12px; display: flex; gap: 8px; }

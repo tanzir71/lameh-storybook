@@ -1,0 +1,333 @@
+/* =========================================================================
+ * Lameh Design System — Design Tokens
+ * Primitive ramps come straight from the Figma source. Semantic tokens map
+ * those primitives to roles and switch between light and dark via
+ * [data-theme="light"] / [data-theme="dark"].
+ * ========================================================================= */
+
+:root {
+  /* ---------------------------------------------------------------------
+   * 1. PRIMITIVE COLOR RAMPS
+   * ------------------------------------------------------------------ */
+
+  /* Neutral */
+  --color-neutral-0:    #FFFFFF;
+  --color-neutral-05:   #EEF0F2;
+  --color-neutral-1:    #DFE0E2;
+  --color-neutral-2:    #C8CACD;
+  --color-neutral-3:    #A9ACB2;
+  --color-neutral-4:    #93979F;
+  --color-neutral-5:    #777A80;
+  --color-neutral-6:    #5A5D61;
+  --color-neutral-7:    #3E3F43;
+  --color-neutral-8:    #303133;
+  --color-neutral-9:    #212224;
+  --color-neutral-95:   #131414;
+  --color-neutral-10:   #000000;
+
+  /* Brand (green) */
+  --color-brand-0:      #FFFFFF;
+  --color-brand-05:     #E6FDF5;
+  --color-brand-1:      #CCFAEB;
+  --color-brand-2:      #99F5D7;
+  --color-brand-3:      #66F0C3;
+  --color-brand-4:      #33EAAF;
+  --color-brand-5:      #00D991;
+  --color-brand-6:      #00B378;
+  --color-brand-7:      #008C5E;
+  --color-brand-8:      #006645;
+  --color-brand-9:      #00402B;
+  --color-brand-95:     #002B1D;
+  --color-brand-10:     #000000;
+
+  /* Accent (deep green) */
+  --color-accent-0:     #FFFFFF;
+  --color-accent-05:    #E8F6F0;
+  --color-accent-1:     #C8EADA;
+  --color-accent-2:     #9DD6BD;
+  --color-accent-3:     #65BF99;
+  --color-accent-4:     #43B290;
+  --color-accent-5:     #229876;
+  --color-accent-6:     #0E7D5E;
+  --color-accent-7:     #066147;
+  --color-accent-8:     #024531;
+  --color-accent-9:     #012B1D;
+  --color-accent-95:    #051A12;
+  --color-accent-10:    #000000;
+
+  /* Warning */
+  --color-warning-0:    #FFFFFF;
+  --color-warning-05:   #FFF8E6;
+  --color-warning-1:    #FFEEBF;
+  --color-warning-2:    #FFDC7E;
+  --color-warning-3:    #FFC83D;
+  --color-warning-4:    #FFB02E;
+  --color-warning-5:    #E08A00;
+  --color-warning-6:    #B06700;
+  --color-warning-7:    #7A4700;
+  --color-warning-8:    #4A2B00;
+  --color-warning-9:    #2A1800;
+  --color-warning-95:   #1B0F00;
+  --color-warning-10:   #000000;
+
+  /* Error */
+  --color-error-0:      #FFFFFF;
+  --color-error-05:     #FDE8E9;
+  --color-error-1:      #FBCCCD;
+  --color-error-2:      #F59697;
+  --color-error-3:      #EE5A5D;
+  --color-error-4:      #EE2E30;
+  --color-error-5:      #C91F24;
+  --color-error-6:      #A01619;
+  --color-error-7:      #770F12;
+  --color-error-8:      #4D090B;
+  --color-error-9:      #2A0506;
+  --color-error-95:     #1C0303;
+  --color-error-10:     #000000;
+
+  /* Info */
+  --color-info-0:       #FFFFFF;
+  --color-info-05:      #E7F4FB;
+  --color-info-1:       #BFDEF0;
+  --color-info-2:       #82C0E1;
+  --color-info-3:       #5BC0EB;
+  --color-info-4:       #2FA0D6;
+  --color-info-5:       #1382B8;
+  --color-info-6:       #0C6595;
+  --color-info-7:       #084970;
+  --color-info-8:       #052E48;
+  --color-info-9:       #021726;
+  --color-info-95:      #030E17;
+  --color-info-10:      #000000;
+
+  /* ---------------------------------------------------------------------
+   * 2. TYPOGRAPHY PRIMITIVES
+   * ------------------------------------------------------------------ */
+
+  --font-sans:     "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display:  "Space Grotesk", "DM Sans", system-ui, sans-serif;
+  --font-mono:     ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Weights */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* Type scale: --type-{role}-{size} encoded as font-size / line-height */
+  --type-display-lg:  700 40px/48px var(--font-sans);
+  --type-display-md:  700 32px/40px var(--font-sans);
+  --type-display-sm:  700 28px/36px var(--font-sans);
+  --type-heading-xl:  600 24px/32px var(--font-sans);
+  --type-heading-lg:  600 22px/28px var(--font-sans);
+  --type-heading-md:  600 20px/28px var(--font-sans);
+  --type-heading-sm:  600 18px/24px var(--font-sans);
+  --type-heading-xs:  600 16px/22px var(--font-sans);
+  --type-body-lg:     500 16px/24px var(--font-sans);
+  --type-body-md:     500 14px/20px var(--font-sans);
+  --type-body-sm:     500 13px/18px var(--font-sans);
+  --type-label-lg:    600 14px/20px var(--font-sans);
+  --type-label-md:    600 12px/16px var(--font-sans);
+  --type-label-sm:    600 11px/14px var(--font-sans);
+  --type-label-xs:    600 10px/14px var(--font-sans);
+  --type-caption-md:  500 12px/16px var(--font-sans);
+  --type-caption-sm:  500 11px/14px var(--font-sans);
+  --type-caption-xs:  500 10px/14px var(--font-sans);
+  --type-overline:    600 11px/16px var(--font-sans);
+  --type-eyebrow:     700 12px/16px var(--font-display);
+
+  /* Letter-spacing tokens (display tightens, labels open up) */
+  --tracking-tightest: -0.094em; /* approx -1.5 at 16px */
+  --tracking-tighter:  -0.063em;
+  --tracking-tight:    -0.031em;
+  --tracking-normal:   0;
+  --tracking-wide:     0.02em;
+  --tracking-wider:    0.05em;
+  --tracking-widest:   0.125em;
+
+  /* ---------------------------------------------------------------------
+   * 3. SPACING (base-4 scale)
+   * ------------------------------------------------------------------ */
+  --space-0:    0;
+  --space-px:   1px;
+  --space-0-5:  2px;
+  --space-1:    4px;
+  --space-1-5:  6px;
+  --space-2:    8px;
+  --space-2-5:  10px;
+  --space-3:    12px;
+  --space-4:    16px;
+  --space-5:    20px;
+  --space-6:    24px;
+  --space-7:    28px;
+  --space-8:    32px;
+  --space-10:   40px;
+  --space-12:   48px;
+  --space-16:   64px;
+  --space-20:   80px;
+  --space-24:   96px;
+
+  /* ---------------------------------------------------------------------
+   * 4. RADIUS
+   * Sharp / architectural. Small components = 2px, medium = 3px,
+   * larger containers cap at 4px. Tooltips intentionally have no radius.
+   * Pill is reserved for the switch track.
+   * ------------------------------------------------------------------ */
+  --radius-none: 0;
+  --radius-xs:   2px;
+  --radius-sm:   3px;
+  --radius-md:   4px;
+  --radius-pill: 9999px;
+
+  /* ---------------------------------------------------------------------
+   * 5. ELEVATION (shadows + focus rings + brand glow)
+   * Numeric values are best-effort reconstructions — the Figma metadata
+   * dump only carried the names/usage. Tuned to match the dark UI feel.
+   * ------------------------------------------------------------------ */
+  --shadow-xs:   0 1px 1px rgba(0, 0, 0, 0.16);
+  --shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.20), 0 1px 2px rgba(0, 0, 0, 0.12);
+  --shadow-md:   0 4px 8px rgba(0, 0, 0, 0.24), 0 1px 2px rgba(0, 0, 0, 0.16);
+  --shadow-lg:   0 12px 24px rgba(0, 0, 0, 0.32), 0 2px 6px rgba(0, 0, 0, 0.20);
+  --shadow-xl:   0 24px 48px rgba(0, 0, 0, 0.36), 0 4px 12px rgba(0, 0, 0, 0.24);
+  --shadow-2xl:  0 32px 64px rgba(0, 0, 0, 0.48), 0 8px 24px rgba(0, 0, 0, 0.32);
+
+  --glow-brand:       0 0 0 1px rgba(0, 217, 145, 0.32), 0 0 24px rgba(0, 217, 145, 0.32);
+  --glow-brand-soft:  0 0 32px rgba(0, 217, 145, 0.16);
+
+  --focus-brand: 0 0 0 3px rgba(0, 217, 145, 0.32);
+  --focus-error: 0 0 0 3px rgba(238, 46, 48, 0.32);
+
+  /* ---------------------------------------------------------------------
+   * 6. MOTION
+   * ------------------------------------------------------------------ */
+  --duration-instant: 80ms;
+  --duration-fast:    140ms;
+  --duration-base:    200ms;
+  --duration-slow:    320ms;
+  --ease-standard:    cubic-bezier(0.2, 0, 0, 1);
+  --ease-emphasized:  cubic-bezier(0.2, 0, 0, 1.2);
+
+  /* ---------------------------------------------------------------------
+   * 7. LAYOUT GRIDS (from Figma "Grids")
+   * ------------------------------------------------------------------ */
+  --bp-mobile:  390px;
+  --bp-tablet:  1024px;
+  --bp-desktop: 1728px;
+}
+
+/* =========================================================================
+ * SEMANTIC TOKENS — DARK (default)
+ * ========================================================================= */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --bg-page:       var(--color-neutral-95);
+  --bg-surface:    var(--color-neutral-9);
+  --bg-surface-2:  var(--color-neutral-8);
+  --bg-surface-3:  var(--color-neutral-7);
+  --bg-subtle:     var(--color-neutral-9);
+  --bg-muted:      var(--color-neutral-8);
+  --bg-hover:      var(--color-neutral-8);
+  --bg-pressed:    var(--color-neutral-7);
+  --bg-selected:   var(--color-brand-95);
+  --bg-disabled:   var(--color-neutral-8);
+  --bg-inverse:    var(--color-neutral-0);
+  --bg-overlay:    rgba(0, 0, 0, 0.64);
+
+  /* Text */
+  --text-primary:   var(--color-neutral-0);
+  --text-secondary: var(--color-neutral-1);
+  --text-tertiary:  var(--color-neutral-3);
+  --text-muted:     var(--color-neutral-4);
+  --text-disabled:  var(--color-neutral-5);
+  --text-inverse:   var(--color-neutral-95);
+  --text-brand:     var(--color-brand-5);
+  --text-on-brand:  var(--color-brand-95);
+  --text-link:      var(--color-info-3);
+  --text-success:   #4CDF95;
+  --text-warning:   var(--color-warning-3);
+  --text-error:     var(--color-error-3);
+
+  /* Borders */
+  --border-subtle:    var(--color-neutral-8);
+  --border-default:   var(--color-neutral-7);
+  --border-emphasis:  var(--color-neutral-6);
+  --border-strong:    var(--color-neutral-3);
+  --border-brand:     var(--color-brand-5);
+  --border-error:     var(--color-error-4);
+  --border-focus:     var(--color-brand-5);
+  --border-disabled:  var(--color-neutral-7);
+
+  /* Status surfaces */
+  --surface-success: #022114;
+  --surface-warning: var(--color-warning-9);
+  --surface-error:   var(--color-error-9);
+  --surface-info:    var(--color-info-9);
+
+  /* Action / brand interactions */
+  --action-brand:          var(--color-brand-5);
+  --action-brand-hover:    var(--color-brand-4);
+  --action-brand-pressed:  var(--color-brand-6);
+  --action-brand-subtle:   var(--color-brand-95);
+  --action-brand-text:     var(--color-brand-95);
+}
+
+/* =========================================================================
+ * SEMANTIC TOKENS — LIGHT
+ * ========================================================================= */
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Surfaces */
+  --bg-page:       var(--color-neutral-0);
+  --bg-surface:    var(--color-neutral-0);
+  --bg-surface-2:  #F7F7F8;
+  --bg-surface-3:  var(--color-neutral-05);
+  --bg-subtle:     var(--color-neutral-05);
+  --bg-muted:      var(--color-neutral-1);
+  --bg-hover:      var(--color-neutral-05);
+  --bg-pressed:    var(--color-neutral-1);
+  --bg-selected:   var(--color-brand-05);
+  --bg-disabled:   var(--color-neutral-1);
+  --bg-inverse:    var(--color-neutral-95);
+  --bg-overlay:    rgba(19, 20, 20, 0.40);
+
+  /* Text */
+  --text-primary:   var(--color-neutral-95);
+  --text-secondary: var(--color-neutral-7);
+  --text-tertiary:  var(--color-neutral-6);
+  --text-muted:     var(--color-neutral-5);
+  --text-disabled:  var(--color-neutral-4);
+  --text-inverse:   var(--color-neutral-0);
+  --text-brand:     var(--color-brand-7);
+  --text-on-brand:  var(--color-brand-95);
+  --text-link:      var(--color-info-6);
+  --text-success:   #076338;
+  --text-warning:   var(--color-warning-7);
+  --text-error:     var(--color-error-6);
+
+  /* Borders */
+  --border-subtle:    var(--color-neutral-05);
+  --border-default:   var(--color-neutral-1);
+  --border-emphasis:  var(--color-neutral-2);
+  --border-strong:    var(--color-neutral-4);
+  --border-brand:     var(--color-brand-6);
+  --border-error:     var(--color-error-4);
+  --border-focus:     var(--color-brand-6);
+  --border-disabled:  var(--color-neutral-1);
+
+  /* Status surfaces (lighter tints) */
+  --surface-success: #E6FDF5;
+  --surface-warning: #FFF8E6;
+  --surface-error:   #FDE8E9;
+  --surface-info:    #E7F4FB;
+
+  /* Action / brand interactions */
+  --action-brand:          var(--color-brand-6);
+  --action-brand-hover:    var(--color-brand-7);
+  --action-brand-pressed:  var(--color-brand-8);
+  --action-brand-subtle:   var(--color-brand-05);
+  --action-brand-text:     var(--color-brand-0);
+}

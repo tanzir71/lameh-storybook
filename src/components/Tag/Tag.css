@@ -1,0 +1,30 @@
+.ds-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 26px; padding: 0 10px;
+  font: var(--type-label-md);
+  color: var(--text-secondary);
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  cursor: default;
+  transition: background var(--duration-fast) var(--ease-standard),
+              border-color var(--duration-fast) var(--ease-standard);
+}
+.ds-tag[data-clickable="true"] { cursor: pointer; }
+.ds-tag[data-clickable="true"]:hover { background: var(--bg-hover); border-color: var(--border-emphasis); }
+.ds-tag[data-selected="true"] {
+  background: var(--action-brand-subtle);
+  color: var(--text-brand);
+  border-color: transparent;
+  box-shadow: var(--glow-brand-soft);
+}
+
+.ds-tag-close {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 16px; height: 16px;
+  margin-right: -4px;
+  border-radius: 50%;
+  color: inherit;
+}
+.ds-tag-close:hover { background: rgba(255,255,255,0.08); }
+[data-theme="light"] .ds-tag-close:hover { background: rgba(0,0,0,0.08); }

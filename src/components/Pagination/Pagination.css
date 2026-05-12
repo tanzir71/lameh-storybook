@@ -1,0 +1,25 @@
+.ds-pagination { display: inline-flex; align-items: center; gap: 4px; }
+.ds-page-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 32px; height: 32px;
+  padding: 0 8px;
+  font: var(--type-label-md);
+  color: var(--text-tertiary);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard),
+              border-color var(--duration-fast) var(--ease-standard);
+}
+.ds-page-btn:hover:not(:disabled) { background: var(--bg-hover); color: var(--text-primary); }
+.ds-page-btn:focus-visible { outline: none; box-shadow: var(--focus-brand); }
+.ds-page-btn[aria-current="page"] {
+  background: var(--action-brand-subtle);
+  color: var(--text-brand);
+  border-color: transparent;
+}
+.ds-page-btn:disabled { color: var(--text-disabled); cursor: not-allowed; }
+
+.ds-page-ellipsis { padding: 0 4px; color: var(--text-muted); }

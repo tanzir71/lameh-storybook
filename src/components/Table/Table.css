@@ -1,0 +1,38 @@
+.ds-table-wrap {
+  overflow: auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+.ds-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font: var(--type-body-sm);
+  color: var(--text-secondary);
+}
+.ds-table thead th {
+  position: sticky; top: 0;
+  font: var(--type-label-md);
+  text-transform: none;
+  color: var(--text-tertiary);
+  background: var(--bg-surface-2);
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+  white-space: nowrap;
+}
+.ds-table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: middle;
+}
+.ds-table tbody tr:hover td { background: var(--bg-hover); }
+.ds-table tbody tr:last-child td { border-bottom: 0; }
+.ds-table .num {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: var(--text-primary);
+}
+.ds-table .pos { color: var(--text-success); }
+.ds-table .neg { color: var(--text-error); }

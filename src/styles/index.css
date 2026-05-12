@@ -1,0 +1,9 @@
+@import "./tokens.css";
+@import "./reset.css";
+
+/* Storybook canvas paints the page background using our token */
+.sb-show-main {
+  background: var(--bg-page) !important;
+  color: var(--text-primary);
+  font: var(--type-body-md);
+}

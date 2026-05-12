@@ -1,0 +1,31 @@
+/* Shared layout helpers for the Foundations stories */
+
+.f-section { padding: 8px 0 32px; }
+.f-section + .f-section { border-top: 1px solid var(--border-subtle); margin-top: 32px; padding-top: 32px; }
+
+.f-eyebrow {
+  font: var(--type-eyebrow);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--text-brand);
+  margin-bottom: 8px;
+}
+.f-title  { font: var(--type-heading-xl); color: var(--text-primary); margin: 0 0 4px; letter-spacing: var(--tracking-tight); }
+.f-sub    { font: var(--type-body-md); color: var(--text-secondary); margin: 0 0 24px; max-width: 60ch; }
+
+.f-grid { display: grid; gap: 12px; }
+.f-grid-12 { grid-template-columns: repeat(13, minmax(0, 1fr)); }
+.f-grid-fit { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.swatch-chip {
+  height: 80px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+.swatch-name { font: var(--type-label-md); color: var(--text-primary); }
+.swatch-hex  { font: var(--type-caption-sm); color: var(--text-tertiary); font-feature-settings: "tnum"; }

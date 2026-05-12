@@ -1,0 +1,47 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Introduction" />
+
+<div style={{ font: "var(--type-body-lg)", color: "var(--text-secondary)", maxWidth: 720 }}>
+
+<div style={{ font: "var(--type-eyebrow)", letterSpacing: "var(--tracking-widest)", textTransform: "uppercase", color: "var(--text-brand)", marginBottom: 12 }}>
+  Lameh Design System
+</div>
+
+<h1 style={{ font: "var(--type-display-md)", color: "var(--text-primary)", margin: "0 0 16px", letterSpacing: "var(--tracking-tight)" }}>
+  Primitives and semantic tokens for a financial-research product.
+</h1>
+
+<p>
+  This Storybook is a free, framework-agnostic front-end for the Lameh design system
+  originally built in Figma. It preserves every color ramp, type style, spacing step,
+  radius, and elevation from the source file and re-expresses the component library
+  as a focused, reusable set of React primitives.
+</p>
+
+<h2 style={{ font: "var(--type-heading-lg)", color: "var(--text-primary)", marginTop: 40 }}>What's inside</h2>
+
+<ul>
+  <li><b>Foundations</b> — color (6 ramps + semantic light/dark), typography (DM Sans + Space Grotesk), spacing, radius, elevation, icons.</li>
+  <li><b>Components</b> — Button, Input, Select, Textarea, Checkbox, Radio, Switch, Badge, Tag, Avatar, Card, Alert, Tooltip, Tabs, Pagination, Modal, Empty State, Spinner, Table.</li>
+  <li><b>Patterns</b> — domain-flavored compositions (Company Card, News Card, Stat Card) that preserve the original Lameh aesthetic.</li>
+</ul>
+
+<h2 style={{ font: "var(--type-heading-lg)", color: "var(--text-primary)", marginTop: 32 }}>Theming</h2>
+
+<p>
+  Toggle between light and dark in the Storybook toolbar (paint-brush icon). The whole
+  system uses CSS custom properties, so themes swap instantly with no rebuild. Newer
+  semantic tokens override legacy values and every text/surface pair is tuned for WCAG AA.
+</p>
+
+<h2 style={{ font: "var(--type-heading-lg)", color: "var(--text-primary)", marginTop: 32 }}>Simplifications from the Figma source</h2>
+
+<ul>
+  <li>Replaced the domain-specific Lameh components (Company Research Tabs, Graph Builder Modal, etc.) with framework-grade primitives that compose into the same patterns.</li>
+  <li>Consolidated 10+ button-like nodes into one <code>Button</code> with <code>variant × size × tone</code> props.</li>
+  <li>Encoded all Figma variables as CSS custom properties; no token compiler required.</li>
+  <li>Added focus rings, disabled states, and a11y labels that were implicit in the source.</li>
+</ul>
+
+</div>
