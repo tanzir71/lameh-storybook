@@ -1,0 +1,47 @@
+/* =========================================================================
+ * Lameh Design System — Local @font-face declarations
+ *
+ * Janna LT Bold and Noto Sans Arabic are NOT on Google Fonts, so they ship
+ * with the design system. DM Sans is loaded from Google Fonts in
+ * preview-head.html, but we also self-host the variable axis here so a
+ * build without network access still renders correctly.
+ *
+ * Files live in /src/assets/fonts and are bundled by Vite via the relative
+ * url() import below.
+ * ========================================================================= */
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("../assets/fonts/DMSans-Variable.ttf") format("truetype-variations");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("../assets/fonts/DMSans-Italic-Variable.ttf") format("truetype-variations");
+  font-weight: 100 1000;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans Arabic";
+  src: url("../assets/fonts/NotoSansArabic-Variable.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+08A0-08FF,
+                 U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@font-face {
+  font-family: "Janna LT Bold";
+  src: url("../assets/fonts/Janna LT Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+08A0-08FF,
+                 U+FB50-FDFF, U+FE70-FEFF;
+}

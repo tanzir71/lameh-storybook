@@ -1,4 +1,5 @@
-.ds-tabs { display: flex; flex-direction: column; }
+/* Tabs widget hugs its content instead of stretching to the parent row. */
+.ds-tabs { display: inline-flex; flex-direction: column; align-items: flex-start; }
 
 .ds-tablist {
   display: inline-flex;

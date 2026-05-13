@@ -1,4 +1,11 @@
+/* Badge — codex §10.7.
+ * Subtle: 10% white bg in dark / 5% near-black in light, paired with the
+ *         matching text-* token from semantics.
+ * Solid:  action-brand (brand) or status ramp step 5, white text.
+ * Rule:   never use solid for "Active" / "Live" — pair subtle + dot instead. */
 .ds-badge {
+  --_badge-bg: rgba(255, 255, 255, 0.10);
+
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -6,25 +13,31 @@
   padding: 0 8px;
   font: var(--type-label-sm);
   border-radius: var(--radius-xs);
-  background: var(--bg-surface-3);
-  color: var(--text-primary);
-  border: 1px solid var(--border-subtle);
+  background: var(--_badge-bg);
+  color: var(--text-secondary);
+  border: 0;
   white-space: nowrap;
+}
+[data-theme="light"] .ds-badge {
+  --_badge-bg: rgba(19, 20, 20, 0.05);
 }
 .ds-badge[data-size="md"] { height: 22px; padding: 0 10px; font: var(--type-label-md); }
 .ds-badge[data-size="lg"] { height: 26px; padding: 0 12px; font: var(--type-label-md); }
 
-.ds-badge[data-tone="brand"]   { background: var(--action-brand-subtle); color: var(--text-brand); border-color: transparent; }
-.ds-badge[data-tone="success"] { background: var(--surface-success); color: var(--text-success); border-color: transparent; }
-.ds-badge[data-tone="warning"] { background: var(--surface-warning); color: var(--text-warning); border-color: transparent; }
-.ds-badge[data-tone="error"]   { background: var(--surface-error);   color: var(--text-error);   border-color: transparent; }
-.ds-badge[data-tone="info"]    { background: var(--surface-info);    color: var(--text-link);    border-color: transparent; }
+/* Subtle tone variants — bg stays translucent, only the text colour changes. */
+.ds-badge[data-tone="brand"]   { color: var(--text-brand); }
+.ds-badge[data-tone="success"] { color: var(--text-success); }
+.ds-badge[data-tone="warning"] { color: var(--text-warning); }
+.ds-badge[data-tone="error"]   { color: var(--text-error); }
+.ds-badge[data-tone="info"]    { color: var(--text-link); }
 
-.ds-badge[data-variant="solid"] { color: var(--color-neutral-0); border-color: transparent; }
+/* Solid: brand uses action-brand; status uses step 5 with white text. */
+.ds-badge[data-variant="solid"] { color: var(--color-neutral-0); }
 .ds-badge[data-variant="solid"][data-tone="brand"]   { background: var(--action-brand); color: var(--action-brand-text); }
-.ds-badge[data-variant="solid"][data-tone="success"] { background: var(--color-brand-6); }
+.ds-badge[data-variant="solid"][data-tone="success"] { background: #0FA760; }
 .ds-badge[data-variant="solid"][data-tone="warning"] { background: var(--color-warning-5); }
 .ds-badge[data-variant="solid"][data-tone="error"]   { background: var(--color-error-5); }
 .ds-badge[data-variant="solid"][data-tone="info"]    { background: var(--color-info-5); }
+.ds-badge[data-variant="solid"][data-tone="neutral"] { background: var(--color-neutral-7); }
 
 .ds-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }

@@ -106,6 +106,7 @@
 
   --font-sans:     "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-display:  "Space Grotesk", "DM Sans", system-ui, sans-serif;
+  --font-arabic:   "Janna LT Bold", "Noto Sans Arabic", "DM Sans", system-ui, sans-serif;
   --font-mono:     ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
   /* Weights */
@@ -114,27 +115,38 @@
   --weight-semibold: 600;
   --weight-bold:     700;
 
-  /* Type scale: --type-{role}-{size} encoded as font-size / line-height */
-  --type-display-lg:  700 40px/48px var(--font-sans);
-  --type-display-md:  700 32px/40px var(--font-sans);
-  --type-display-sm:  700 28px/36px var(--font-sans);
-  --type-heading-xl:  600 24px/32px var(--font-sans);
-  --type-heading-lg:  600 22px/28px var(--font-sans);
-  --type-heading-md:  600 20px/28px var(--font-sans);
-  --type-heading-sm:  600 18px/24px var(--font-sans);
-  --type-heading-xs:  600 16px/22px var(--font-sans);
-  --type-body-lg:     500 16px/24px var(--font-sans);
-  --type-body-md:     500 14px/20px var(--font-sans);
-  --type-body-sm:     500 13px/18px var(--font-sans);
-  --type-label-lg:    600 14px/20px var(--font-sans);
-  --type-label-md:    600 12px/16px var(--font-sans);
-  --type-label-sm:    600 11px/14px var(--font-sans);
-  --type-label-xs:    600 10px/14px var(--font-sans);
-  --type-caption-md:  500 12px/16px var(--font-sans);
-  --type-caption-sm:  500 11px/14px var(--font-sans);
-  --type-caption-xs:  500 10px/14px var(--font-sans);
-  --type-overline:    600 11px/16px var(--font-sans);
-  --type-eyebrow:     700 12px/16px var(--font-display);
+  /* Type scale: --type-{role}-{size} encoded as font-size / line-height.
+   * Lighter and smaller than the raw codex spec — display = Medium (500),
+   * heading and body default to Regular (400). Largest sizes shrunk one
+   * step so dense data UIs read calmly. */
+  --type-display-lg:        500 32px/40px var(--font-sans);
+  --type-display-md:        500 28px/36px var(--font-sans);
+  --type-display-sm:        500 24px/32px var(--font-sans);
+  --type-heading-xl:        400 22px/28px var(--font-sans);
+  --type-heading-lg:        400 20px/28px var(--font-sans);
+  --type-heading-md:        400 18px/24px var(--font-sans);
+  --type-heading-sm:        400 16px/22px var(--font-sans);
+  --type-heading-xs:        400 14px/20px var(--font-sans);
+  --type-body-lg:           400 16px/24px var(--font-sans);
+  --type-body-lg-regular:   400 16px/24px var(--font-sans);
+  --type-body-md:           400 14px/20px var(--font-sans);
+  --type-body-md-regular:   400 14px/20px var(--font-sans);
+  --type-body-sm:           400 13px/18px var(--font-sans);
+  --type-body-sm-regular:   400 13px/18px var(--font-sans);
+  --type-label-lg:          600 14px/20px var(--font-sans);
+  --type-label-md:          600 12px/16px var(--font-sans);
+  --type-label-sm:          600 11px/14px var(--font-sans);
+  --type-label-xs:          600 10px/14px var(--font-sans);
+  --type-caption-md:        500 12px/16px var(--font-sans);
+  --type-caption-sm:        500 11px/14px var(--font-sans);
+  --type-caption-xs:        500 10px/14px var(--font-sans);
+  --type-overline:          600 11px/16px var(--font-sans);
+  --type-eyebrow:           700 12px/16px var(--font-display);
+
+  /* Arabic company-page titles — Janna LT Bold first, Noto Sans Arabic fallback. */
+  --type-company-title-lg:  700 22px/1.3 var(--font-arabic);
+  --type-company-title-md:  700 17px/1.3 var(--font-arabic);
+  --type-company-title-sm:  700 16px/1.3 var(--font-arabic);
 
   /* Letter-spacing tokens (display tightens, labels open up) */
   --tracking-tightest: -0.094em; /* approx -1.5 at 16px */
@@ -181,21 +193,28 @@
 
   /* ---------------------------------------------------------------------
    * 5. ELEVATION (shadows + focus rings + brand glow)
-   * Numeric values are best-effort reconstructions — the Figma metadata
-   * dump only carried the names/usage. Tuned to match the dark UI feel.
+   * Numeric values are pulled directly from the Figma effect styles
+   * (see codex §6). Keep these stable; if a designer disputes a value,
+   * update every implementation from the codex table.
    * ------------------------------------------------------------------ */
-  --shadow-xs:   0 1px 1px rgba(0, 0, 0, 0.16);
-  --shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.20), 0 1px 2px rgba(0, 0, 0, 0.12);
-  --shadow-md:   0 4px 8px rgba(0, 0, 0, 0.24), 0 1px 2px rgba(0, 0, 0, 0.16);
-  --shadow-lg:   0 12px 24px rgba(0, 0, 0, 0.32), 0 2px 6px rgba(0, 0, 0, 0.20);
-  --shadow-xl:   0 24px 48px rgba(0, 0, 0, 0.36), 0 4px 12px rgba(0, 0, 0, 0.24);
-  --shadow-2xl:  0 32px 64px rgba(0, 0, 0, 0.48), 0 8px 24px rgba(0, 0, 0, 0.32);
+  --shadow-xs:   0 1px 2px  rgba(0, 0, 0, 0.06);
+  --shadow-sm:   0 2px 4px  rgba(0, 0, 0, 0.10);
+  --shadow-md:   0 4px 8px  rgba(0, 0, 0, 0.12);
+  --shadow-lg:   0 8px 16px rgba(0, 0, 0, 0.16);
+  --shadow-xl:   0 0  20px  rgba(0, 0, 0, 0.20);
+  --shadow-2xl:  0 0  64px  rgba(19, 20, 20, 0.48);
 
-  --glow-brand:       0 0 0 1px rgba(0, 217, 145, 0.32), 0 0 24px rgba(0, 217, 145, 0.32);
-  --glow-brand-soft:  0 0 32px rgba(0, 217, 145, 0.16);
+  /* Inner highlight used on raised surfaces */
+  --inset-subtle:     inset 0 1px 0 rgba(255, 255, 255, 0.06);
 
-  --focus-brand: 0 0 0 3px rgba(0, 217, 145, 0.32);
-  --focus-error: 0 0 0 3px rgba(238, 46, 48, 0.32);
+  /* Brand glow (the green halo on hovered CTAs) */
+  --glow-brand:       0 0 24px rgba(0, 217, 145, 0.08);
+  --glow-brand-soft:  0 0 64px rgba(0, 217, 145, 0.08);
+
+  /* Focus rings — Figma uses a 2px solid spread (#008C5E / #B06700).
+   * Implementation may render as a 3px outset ring for WCAG 2.4.13. */
+  --focus-brand: 0 0 0 3px #008C5E;
+  --focus-error: 0 0 0 3px #B06700;
 
   /* ---------------------------------------------------------------------
    * 6. MOTION
@@ -208,11 +227,44 @@
   --ease-emphasized:  cubic-bezier(0.2, 0, 0, 1.2);
 
   /* ---------------------------------------------------------------------
-   * 7. LAYOUT GRIDS (from Figma "Grids")
+   * 7. LAYOUT GRIDS (responsive variables from codex §8.1).
+   * Breakpoints, max-content containers, and outer margins all scale
+   * with viewport. The product canvas defaults to a 1728 px design width.
    * ------------------------------------------------------------------ */
-  --bp-mobile:  390px;
-  --bp-tablet:  1024px;
-  --bp-desktop: 1728px;
+  --breakpoint-mobile:   320px;
+  --breakpoint-tablet:   768px;
+  --breakpoint-laptop:   1024px;
+  --breakpoint-desktop:  1440px;
+  --breakpoint-large:    1920px;
+  --breakpoint-wide:     2560px;
+
+  --container-mobile:    1024px;
+  --container-tablet:    1024px;
+  --container-laptop:    1024px;
+  --container-desktop:   1280px;
+  --container-large:     1440px;
+  --container-wide:      1680px;
+
+  --margin-mobile:       16px;
+  --margin-tablet:       32px;
+  --margin-laptop:       32px;
+  --margin-desktop:      64px;
+  --margin-large:        96px;
+  --margin-wide:         128px;
+
+  /* Legacy short aliases — keep for code that still references them. */
+  --bp-mobile:           var(--breakpoint-mobile);
+  --bp-tablet:           var(--breakpoint-tablet);
+  --bp-desktop:          var(--breakpoint-desktop);
+
+  /* ---------------------------------------------------------------------
+   * 8. BORDER WIDTHS (codex §16.1)
+   * ------------------------------------------------------------------ */
+  --border-width-0:   0;
+  --border-width-sm:  1px;
+  --border-width-md:  1.5px;
+  --border-width-lg:  2px;
+  --border-width-xl:  3px;
 }
 
 /* =========================================================================
@@ -267,11 +319,23 @@
   --surface-info:    var(--color-info-9);
 
   /* Action / brand interactions */
-  --action-brand:          var(--color-brand-5);
-  --action-brand-hover:    var(--color-brand-4);
-  --action-brand-pressed:  var(--color-brand-6);
-  --action-brand-subtle:   var(--color-brand-95);
-  --action-brand-text:     var(--color-brand-95);
+  --action-brand:           var(--color-brand-5);
+  --action-brand-hover:     var(--color-brand-4);
+  --action-brand-pressed:   var(--color-brand-6);
+  --action-brand-subtle:    var(--color-brand-9);
+  --action-brand-onsubtle:  var(--color-brand-3);
+  --action-brand-text:      var(--color-brand-95);
+
+  /* Icons */
+  --icon-primary:    var(--color-neutral-0);
+  --icon-secondary:  var(--color-neutral-2);
+  --icon-muted:      var(--color-neutral-4);
+  --icon-brand:      var(--color-brand-5);
+  --icon-inverse:    var(--color-neutral-95);
+  --icon-success:    #22C97A;
+  --icon-warning:    var(--color-warning-4);
+  --icon-error:      var(--color-error-4);
+  --icon-info:       var(--color-info-4);
 }
 
 /* =========================================================================
@@ -313,9 +377,9 @@
   --border-default:   var(--color-neutral-1);
   --border-emphasis:  var(--color-neutral-2);
   --border-strong:    var(--color-neutral-4);
-  --border-brand:     var(--color-brand-6);
-  --border-error:     var(--color-error-4);
-  --border-focus:     var(--color-brand-6);
+  --border-brand:     var(--color-brand-5);
+  --border-error:     var(--color-error-5);
+  --border-focus:     var(--color-brand-5);
   --border-disabled:  var(--color-neutral-1);
 
   /* Status surfaces (lighter tints) */
@@ -324,10 +388,23 @@
   --surface-error:   #FDE8E9;
   --surface-info:    #E7F4FB;
 
-  /* Action / brand interactions */
-  --action-brand:          var(--color-brand-6);
-  --action-brand-hover:    var(--color-brand-7);
-  --action-brand-pressed:  var(--color-brand-8);
-  --action-brand-subtle:   var(--color-brand-05);
-  --action-brand-text:     var(--color-brand-0);
+  /* Action / brand interactions — Brand 5 stays the canonical CTA fill
+   * in both themes; only hover/pressed/subtle remap. */
+  --action-brand:           var(--color-brand-5);
+  --action-brand-hover:     var(--color-brand-6);
+  --action-brand-pressed:   var(--color-brand-7);
+  --action-brand-subtle:    var(--color-brand-1);
+  --action-brand-onsubtle:  var(--color-brand-7);
+  --action-brand-text:      var(--color-brand-95);
+
+  /* Icons */
+  --icon-primary:    var(--color-neutral-95);
+  --icon-secondary:  var(--color-neutral-7);
+  --icon-muted:      var(--color-neutral-5);
+  --icon-brand:      var(--color-brand-6);
+  --icon-inverse:    var(--color-neutral-0);
+  --icon-success:    #0A854B;
+  --icon-warning:    var(--color-warning-6);
+  --icon-error:      var(--color-error-5);
+  --icon-info:       var(--color-info-5);
 }

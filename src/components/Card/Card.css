@@ -1,30 +1,34 @@
 .ds-card {
   display: flex; flex-direction: column;
   background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  border: 0;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
   transition: box-shadow var(--duration-base) var(--ease-standard),
-              border-color var(--duration-base) var(--ease-standard),
               transform var(--duration-base) var(--ease-standard);
 }
 .ds-card[data-interactive="true"] { cursor: pointer; }
-.ds-card[data-interactive="true"]:hover { box-shadow: var(--shadow-md); border-color: var(--border-emphasis); }
+.ds-card[data-interactive="true"]:hover { box-shadow: var(--shadow-md); }
 .ds-card[data-interactive="true"]:active { transform: translateY(0.5px); }
-.ds-card[data-padding="md"] > .ds-card-body { padding: var(--space-5); }
-.ds-card[data-padding="lg"] > .ds-card-body { padding: var(--space-6); }
-.ds-card[data-padding="sm"] > .ds-card-body { padding: var(--space-3); }
 
-.ds-card-header,
+/* Compact: 8 px on the sides, 8 px vertical. md adds a touch more vertical. */
+.ds-card[data-padding="sm"] > .ds-card-body { padding: var(--space-2); }
+.ds-card[data-padding="md"] > .ds-card-body { padding: var(--space-2) var(--space-2); }
+.ds-card[data-padding="lg"] > .ds-card-body { padding: var(--space-3) var(--space-2); }
+
+.ds-card-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--space-2);
+  gap: var(--space-2);
+}
 .ds-card-footer {
   display: flex; align-items: center; justify-content: space-between;
-  padding: var(--space-4) var(--space-5);
-  gap: var(--space-3);
+  padding: var(--space-2);
+  gap: var(--space-2);
+  background: var(--bg-surface-2);
 }
-.ds-card-header { border-bottom: 1px solid var(--border-subtle); }
-.ds-card-footer { border-top: 1px solid var(--border-subtle); background: var(--bg-surface-2); }
 
-.ds-card-title { font: var(--type-heading-sm); color: var(--text-primary); margin: 0; }
-.ds-card-subtitle { font: var(--type-caption-md); color: var(--text-tertiary); margin: 0; }
-.ds-card-body { padding: var(--space-5); flex: 1; }
+.ds-card-title { font: var(--type-label-lg); color: var(--text-primary); margin: 0; }
+.ds-card-subtitle { font: var(--type-caption-sm); color: var(--text-tertiary); margin: 0; }
+.ds-card-body { padding: var(--space-2); flex: 1; }

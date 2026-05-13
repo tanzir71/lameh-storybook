@@ -68,8 +68,8 @@ const SEMANTIC = [
   { group: "Surface", tokens: ["bg-page", "bg-surface", "bg-surface-2", "bg-surface-3", "bg-subtle", "bg-muted", "bg-hover", "bg-pressed", "bg-selected", "bg-disabled", "bg-inverse"] },
   { group: "Text", tokens: ["text-primary", "text-secondary", "text-tertiary", "text-muted", "text-disabled", "text-inverse", "text-brand", "text-on-brand", "text-link", "text-success", "text-warning", "text-error"] },
   { group: "Border", tokens: ["border-subtle", "border-default", "border-emphasis", "border-strong", "border-brand", "border-error", "border-focus", "border-disabled"] },
-  { group: "Status surface", tokens: ["surface-success", "surface-warning", "surface-error", "surface-info"] },
-  { group: "Action / brand", tokens: ["action-brand", "action-brand-hover", "action-brand-pressed", "action-brand-subtle"] },
+  { group: "Action / brand", tokens: ["action-brand", "action-brand-hover", "action-brand-pressed", "action-brand-subtle", "action-brand-onsubtle", "action-brand-text"] },
+  { group: "Icon", tokens: ["icon-primary", "icon-secondary", "icon-muted", "icon-brand", "icon-inverse", "icon-success", "icon-warning", "icon-error", "icon-info"] },
 ];
 
 function Ramp({ name, steps }: { name: string; steps: { step: string; hex: string }[] }) {

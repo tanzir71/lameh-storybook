@@ -73,7 +73,7 @@
   --_h: auto;
 }
 .ds-btn[data-variant="link"]:hover { text-decoration: underline; text-underline-offset: 3px; }
-.ds-btn[data-variant="link"]:focus-visible { box-shadow: 0 0 0 3px var(--action-brand-subtle); border-radius: var(--radius-xs); }
+.ds-btn[data-variant="link"]:focus-visible { box-shadow: var(--focus-brand); border-radius: var(--radius-xs); }
 
 /* Tones (alt color signal) */
 .ds-btn[data-tone="danger"] {

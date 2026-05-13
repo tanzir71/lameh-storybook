@@ -20,11 +20,17 @@ export interface TabsProps {
   /** Controlled mode */
   value?: string;
   onValueChange?: (value: string) => void;
-  variant?: "pill" | "underline";
+  /**
+   * Visual style.
+   * - `segmented` - codex-preferred name: track `bg-surface-2`, 28-px tabs.
+   * - `pill` - legacy alias for `segmented`, kept for backwards compatibility.
+   * - `underline` - 40-px tabs with a 2-px brand bottom-border on active.
+   */
+  variant?: "segmented" | "pill" | "underline";
   className?: string;
 }
 
-export function Tabs({ children, defaultValue, value, onValueChange, variant = "pill", className }: TabsProps) {
+export function Tabs({ children, defaultValue, value, onValueChange, variant = "segmented", className }: TabsProps) {
   const tabs = Children.toArray(children).filter(isValidElement) as ReactElement<TabItemProps>[];
   const ids = tabs.map(t => t.props.id);
   const [internal, setInternal] = useState(defaultValue ?? ids[0]);

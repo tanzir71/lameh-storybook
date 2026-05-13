@@ -2,19 +2,19 @@ import type { Meta, StoryObj } from "@storybook/react";
 import "./foundations.css";
 
 const SHADOWS = [
-  { token: "shadow-xs",  use: "Subtle separation: chips, tags" },
-  { token: "shadow-sm",  use: "Default elevation: cards at rest" },
-  { token: "shadow-md",  use: "Hover for cards, dropdowns" },
-  { token: "shadow-lg",  use: "Modals, popovers" },
-  { token: "shadow-xl",  use: "Floating panels (offset shadow)" },
-  { token: "shadow-2xl", use: "Large overlays in dark mode" },
+  { token: "shadow-xs",  use: "Chips, tags, inline pills" },
+  { token: "shadow-sm",  use: "Cards at rest" },
+  { token: "shadow-md",  use: "Hovered cards, dropdown menus" },
+  { token: "shadow-lg",  use: "Popovers, tooltips, floating panels" },
+  { token: "shadow-xl",  use: "Modals" },
+  { token: "shadow-2xl", use: "Full-screen overlays, immersive search" },
 ];
 
 const GLOWS = [
-  { token: "glow-brand",      use: "CTA halo / hovered brand control" },
-  { token: "glow-brand-soft", use: "Ambient brand wash on selected" },
-  { token: "focus-brand",     use: "Focus indicator (3px ring)" },
-  { token: "focus-error",     use: "Error focus (3px ring)" },
+  { token: "glow-brand",      use: "Hovered CTA halo (24px blur, 8% brand)" },
+  { token: "glow-brand-soft", use: "Ambient brand wash (64px blur, 8% brand)" },
+  { token: "focus-brand",     use: "Focusable elements (3px outset ring)" },
+  { token: "focus-error",     use: "Errored focusable elements (3px ring)" },
 ];
 
 function Card({ token, use }: { token: string; use: string }) {

@@ -22,17 +22,29 @@ import { Meta } from "@storybook/blocks";
 <h2 style={{ font: "var(--type-heading-lg)", color: "var(--text-primary)", marginTop: 40 }}>What's inside</h2>
 
 <ul>
-  <li><b>Foundations</b> — color (6 ramps + semantic light/dark), typography (DM Sans + Space Grotesk), spacing, radius, elevation, icons.</li>
-  <li><b>Components</b> — Button, Input, Select, Textarea, Checkbox, Radio, Switch, Badge, Tag, Avatar, Card, Alert, Tooltip, Tabs, Pagination, Modal, Empty State, Spinner, Table.</li>
-  <li><b>Patterns</b> — domain-flavored compositions (Company Card, News Card, Stat Card) that preserve the original Lameh aesthetic.</li>
+  <li><b>Foundations</b> — six color ramps (Neutral, Brand, Accent, Warning, Error, Info) plus the full semantic layer for light/dark; typography in DM Sans, Space Grotesk eyebrow, and Janna LT Bold + Noto Sans Arabic for company-page titles; base-4 spacing, sharp radii (max 4 px), Figma-accurate elevation, and the lucide-react icon set.</li>
+  <li><b>Components</b> — Button, Icon Button, Input, Textarea, Select, Checkbox, Radio, Switch, Badge, Tag, Avatar, Card, Alert, Tooltip, Tabs, Pagination, Modal, Empty State, Spinner, Table.</li>
+  <li><b>Patterns</b> — domain-flavoured compositions (News List, Filter Bar) that preserve the original Lameh aesthetic.</li>
 </ul>
+
+<h2 style={{ font: "var(--type-heading-lg)", color: "var(--text-primary)", marginTop: 32 }}>Type and weight rules</h2>
+
+<p>
+  Display sizes cap at <b>SemiBold (600)</b>. Heading sizes cap at <b>Medium (500)</b>.
+  Eyebrows are the only Space Grotesk usage, always uppercase. Numbers everywhere
+  use <code>font-variant-numeric: tabular-nums</code>. Arabic company-page titles use
+  <code> Janna LT Bold</code> with <code>Noto Sans Arabic</code> as fallback — paired
+  with an English subtitle in <code>DM Sans / 500 / 14 / 1.4</code>.
+</p>
 
 <h2 style={{ font: "var(--type-heading-lg)", color: "var(--text-primary)", marginTop: 32 }}>Theming</h2>
 
 <p>
   Toggle between light and dark in the Storybook toolbar (paint-brush icon). The whole
-  system uses CSS custom properties, so themes swap instantly with no rebuild. Newer
-  semantic tokens override legacy values and every text/surface pair is tuned for WCAG AA.
+  system uses CSS custom properties, so themes swap instantly with no rebuild. The
+  <code> action-brand</code> fill stays at <code>#00D991</code> (Brand 5) in both
+  modes — only hover, pressed, and subtle states remap. Every text/surface pair is
+  tuned for WCAG AA.
 </p>
 
 <h2 style={{ font: "var(--type-heading-lg)", color: "var(--text-primary)", marginTop: 32 }}>Simplifications from the Figma source</h2>
@@ -40,7 +52,7 @@ import { Meta } from "@storybook/blocks";
 <ul>
   <li>Replaced the domain-specific Lameh components (Company Research Tabs, Graph Builder Modal, etc.) with framework-grade primitives that compose into the same patterns.</li>
   <li>Consolidated 10+ button-like nodes into one <code>Button</code> with <code>variant × size × tone</code> props.</li>
-  <li>Encoded all Figma variables as CSS custom properties; no token compiler required.</li>
+  <li>Encoded every Figma variable — primitives, semantics, type, spacing, radius, elevation, motion, grids, breakpoints — as CSS custom properties; no token compiler required.</li>
   <li>Added focus rings, disabled states, and a11y labels that were implicit in the source.</li>
 </ul>
 

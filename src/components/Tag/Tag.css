@@ -1,30 +1,43 @@
+/* Tag (Chip) — codex §10.8.
+ * Background: white at 10% opacity (dark) or near-black 4% (light).
+ * Border: none. Selected keeps the same bg and only flips text colour. */
 .ds-tag {
+  --_tag-bg: rgba(255, 255, 255, 0.10);
+  --_tag-bg-hover: rgba(255, 255, 255, 0.16);
+
   display: inline-flex; align-items: center; gap: 6px;
   height: 26px; padding: 0 10px;
   font: var(--type-label-md);
   color: var(--text-secondary);
-  background: var(--bg-surface-2);
-  border: 1px solid var(--border-subtle);
+  background: var(--_tag-bg);
+  border: 0;
   border-radius: var(--radius-xs);
   cursor: default;
   transition: background var(--duration-fast) var(--ease-standard),
-              border-color var(--duration-fast) var(--ease-standard);
+              color var(--duration-fast) var(--ease-standard);
 }
+[data-theme="light"] .ds-tag {
+  --_tag-bg: rgba(19, 20, 20, 0.05);
+  --_tag-bg-hover: rgba(19, 20, 20, 0.09);
+}
+
 .ds-tag[data-clickable="true"] { cursor: pointer; }
-.ds-tag[data-clickable="true"]:hover { background: var(--bg-hover); border-color: var(--border-emphasis); }
+.ds-tag[data-clickable="true"]:hover { background: var(--_tag-bg-hover); }
+.ds-tag[data-clickable="true"]:focus-visible { outline: none; box-shadow: var(--focus-brand); }
+
+/* Selected: same translucent bg, brand-coloured text only. */
 .ds-tag[data-selected="true"] {
-  background: var(--action-brand-subtle);
   color: var(--text-brand);
-  border-color: transparent;
-  box-shadow: var(--glow-brand-soft);
 }
 
 .ds-tag-close {
   display: inline-flex; align-items: center; justify-content: center;
   width: 16px; height: 16px;
   margin-right: -4px;
+  border: 0; background: transparent;
   border-radius: 50%;
   color: inherit;
+  cursor: pointer;
 }
-.ds-tag-close:hover { background: rgba(255,255,255,0.08); }
-[data-theme="light"] .ds-tag-close:hover { background: rgba(0,0,0,0.08); }
+.ds-tag-close:hover { background: rgba(255, 255, 255, 0.10); }
+[data-theme="light"] .ds-tag-close:hover { background: rgba(19, 20, 20, 0.08); }
